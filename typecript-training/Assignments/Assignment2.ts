@@ -28,8 +28,8 @@ debtToIncomeRatio = 35.0; */
 
 
 let customerName: string = "John Doe";
-let creditScore: number = 720;
-let income: number = 55000.0;
+let creditScore: number = 720
+let income: number = 52000;
 let isEmployed: boolean = true;
 let debtToIncomeRatio: number = 35.0;
 
@@ -43,22 +43,35 @@ let debtToIncomeRatio: number = 35.0;
         } */
 
 
- if (creditScore > 750) {
-        console.log("Loan is automatically approved.");
- }
- else if (creditScore >=650 && creditScore <= 750){
-    console.log("additional checks are performed");
-    if (income >= 50000) {
-        console.log("Loan is considered bcoz income is met.");
-    }
-else {
-    console.log("loan is rejected, because creditscore is not met the requirement");
+//Shif+Alt+F
 
-    }
 
- }
+if (creditScore > 750) {
+console.log("Loan is automatically approved.");
+}
+    else if (creditScore >= 650 && creditScore <= 750) {
+    console.log("Additional checks are performed");
     
+        if (income >=50000) {
+            console.log("Your loan is considered, as income criteria is matched.");
 
- else {
-console.log("loan is declined");
- }
+            if (isEmployed){
+             console.log("Your loan is considered,as you are employed.");
+            
+                if (debtToIncomeRatio <= 40){
+                    console.log("Your DTI ratio is less than 40%, so the loan is approved");
+                 }
+                  else {
+                    console.log("Your DTI ratio is above 40%, the loan is rejected.");
+                    }
+                }     
+            else{
+                console.log("Your loan rejected, as you are not employed");
+            
+            }
+        }else{
+        console.log("Your loan is rejected, as your income is not matched.");
+     }
+    }else{
+    console.log("Your loan is declined");
+}
